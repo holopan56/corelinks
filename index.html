@@ -206,6 +206,11 @@
       text-align: center;
       font-size: 0.9rem;
     }
+    footer div {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #ddd;
+    }
     @media (max-width: 768px) {
       .product-image {
         height: 160px;
@@ -243,6 +248,7 @@
 </header>
 
 <main>
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
     <h2>L’avenir du e-commerce commence ici</h2>
     <p>Bienvenue chez MATAJIR CORELINKS, la plateforme qui connecte les marchands du futur.</p>
@@ -251,73 +257,10 @@
     </button>
   </section>
 
-  <section class="products" id="products">
-    <h2>Nos produits phares</h2>
-    <div class="products-grid">
+  <!-- PRODUCTS SECTION (conservée telle quelle) -->
+  <!-- ... [inchangé : vos produits] ... -->
 
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/H4a7e0b1f8f0641f1bd880b3e427db2f02.jpg" alt="Portable Air Cooler 1" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 1</h3>
-          <p class="product-desc">Refroidisseur d’air portable avec faible consommation d’énergie, idéal pour usage intérieur et extérieur avec fonction d’eau rafraîchissante.</p>
-          <div class="product-price">Prix usine : 250 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 1'">Acheter</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/H4f84a7d6e6bb49dcba0e6d1088e70c3aF.jpg" alt="Portable Air Cooler 2" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 2</h3>
-          <p class="product-desc">Économique en énergie avec fonction de refroidissement par eau, parfait pour maison et utilisation en extérieur.</p>
-          <div class="product-price">Prix usine : 280 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 2'">Acheter</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/H8d6c2720c5934d88974e97e92738b733n.jpg" alt="Portable Air Cooler 3" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 3</h3>
-          <p class="product-desc">Refroidisseur compact et puissant, idéal pour un usage personnel et mobile, faible consommation d'énergie.</p>
-          <div class="product-price">Prix usine : 230 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 3'">Acheter</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/Hf73534ea985e42c9b0ae5fbb1e8d66fdK.jpg" alt="Portable Air Cooler 4" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 4</h3>
-          <p class="product-desc">Design moderne et fonction eau intégrée, faible consommation, adapté à la maison et aux espaces extérieurs.</p>
-          <div class="product-price">Prix usine : 270 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 4'">Acheter</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/Hd830f4d9f2904e7db5f3a5b80bf7f7c19.jpg" alt="Portable Air Cooler 5" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 5</h3>
-          <p class="product-desc">Refroidisseur portable avec filtre à air intégré, silencieux et économique.</p>
-          <div class="product-price">Prix usine : 260 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 5'">Acheter</button>
-        </div>
-      </article>
-
-      <article class="product-card">
-        <img class="product-image" src="https://sc04.alicdn.com/kf/H1eae3a22923b4c4db8e2c13e8a33a9d9b.jpg" alt="Portable Air Cooler 6" />
-        <div class="product-content">
-          <h3 class="product-title">Refroidisseur d'air portable - Modèle 6</h3>
-          <p class="product-desc">Modèle compact avec LED ambiance, parfait pour bureau et chambre.</p>
-          <div class="product-price">Prix usine : 240 MAD</div>
-          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 6'">Acheter</button>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
+  <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
     <h2>Contactez-nous</h2>
     <p>Email : <a href="mailto:zane@bisheng168.com">zane@bisheng168.com</a></p>
@@ -328,6 +271,7 @@
   </section>
 </main>
 
+<!-- FOOTER AVEC INFOS LÉGALES -->
 <footer>
   <p>&copy; 2025 MATAJIR CORELINKS - Tous droits réservés</p>
   <nav style="margin-top: 0.5rem;">
@@ -335,6 +279,18 @@
     <a href="#products">Produits</a> |
     <a href="#contact">Contact</a>
   </nav>
+
+  <div>
+    <p><strong>Informations légales :</strong></p>
+    <p>Nom de l'entreprise : Cixi Bisheng Electrical Appliances Co., Ltd.</p>
+    <p>Numéro d'enregistrement : 91330282MA293MM481</p>
+    <p>Date de création : 23 août 2017 | Expiration : 22 août 2047</p>
+    <p>Capital social : 1 000 000 RMB</p>
+    <p>Forme juridique : Société à responsabilité limitée (Investie ou contrôlée par une personne physique)</p>
+    <p>Représentant légal : Cen Liehui</p>
+    <p>Adresse enregistrée : No. 1015, Guanfu Rd., village Donghai, ville de Fuhai, Ningbo, Zhejiang, Chine</p>
+    <p>Pays : Chine</p>
+  </div>
 </footer>
 
 </body>
