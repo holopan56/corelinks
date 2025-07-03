@@ -3,247 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MATAJIR CORELINKS</title>
+  <title>MATAJIR CORELINKS - Refroidisseurs d'air portables</title>
   <style>
-    /* Reset basique */
+    /* Reset & Base */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background: #f9faff;
-      color: #333;
     }
-
+    body {
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header */
     header {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      background: #0056b3;
+      width: 100%;
+      background: #004a99;
       color: white;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
     }
-
     header h1 {
       font-size: 1.5rem;
+      letter-spacing: 1px;
+      user-select: none;
       cursor: default;
     }
-
     nav a {
-      color: white;
-      text-decoration: none;
       margin-left: 1.5rem;
       font-weight: 600;
-      transition: color 0.3s;
+      color: white;
+      transition: color 0.3s ease;
     }
-
     nav a:hover {
-      color: #ffdd00;
+      color: #ffcc00;
     }
-
     main {
       margin-top: 60px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 2rem;
     }
-
+    /* Hero */
     .hero {
-      background: linear-gradient(135deg, #0056b3, #007bff);
+      background: linear-gradient(135deg, #004a99, #007bff);
       color: white;
+      padding: 5rem 2rem 4rem;
       text-align: center;
-      padding: 5rem 1rem 4rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,123,255,0.3);
+      margin-bottom: 3rem;
     }
-
     .hero h2 {
       font-size: 2.8rem;
       margin-bottom: 0.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-
     .hero p {
       font-size: 1.25rem;
-      margin-bottom: 2rem;
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 2rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
     }
-
     .btn-primary {
-      background: #ffdd00;
-      color: #0056b3;
-      border: none;
-      padding: 0.75rem 1.75rem;
-      font-size: 1.1rem;
-      font-weight: bold;
+      background: #ffcc00;
+      color: #004a99;
+      padding: 0.8rem 2rem;
       border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
       cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-      display: inline-block;
+      box-shadow: 0 5px 10px rgba(255,204,0,0.5);
+      transition: background-color 0.3s ease;
     }
-
     .btn-primary:hover {
-      background: #e6c700;
+      background-color: #e6b800;
     }
-
-    section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* Produits */
+    section.products {
+      margin-bottom: 4rem;
     }
-
-    h2.section-title {
+    section.products h2 {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.4rem;
+      color: #004a99;
       margin-bottom: 2rem;
-      color: #0056b3;
       font-weight: 700;
     }
-
-    /* Produits */
-
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
       gap: 2rem;
     }
-
     .product-card {
       background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s;
     }
-
     .product-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
-
     .product-image {
       width: 100%;
       height: 180px;
       object-fit: cover;
+      border-bottom: 2px solid #007bff;
     }
-
     .product-content {
-      padding: 1rem;
+      padding: 1.5rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-
-    .product-content h3 {
-      font-size: 1.25rem;
+    .product-title {
+      font-size: 1.3rem;
+      color: #004a99;
       margin-bottom: 0.5rem;
-      color: #0056b3;
+      font-weight: 700;
     }
-
-    .product-content p {
+    .product-desc {
       flex-grow: 1;
       font-size: 0.95rem;
-      margin-bottom: 1rem;
       color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.4;
     }
-
     .product-price {
-      font-weight: bold;
+      font-weight: 700;
+      color: #007bff;
       font-size: 1.1rem;
       margin-bottom: 1rem;
-      color: #007bff;
     }
-
     .btn-buy {
       background: #007bff;
       color: white;
       border: none;
       padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-buy:hover {
-      background: #0056b3;
-    }
-
-    /* Section À propos */
-
-    .about-text {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #444;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    /* Contact */
-
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    input, textarea {
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      font-weight: 700;
       font-size: 1rem;
-      resize: vertical;
-      transition: border-color 0.3s;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #007bff;
-    }
-
-    button[type="submit"] {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.1rem;
       border-radius: 30px;
       cursor: pointer;
-      font-weight: 700;
-      transition: background 0.3s;
-    }
-
-    button[type="submit"]:hover {
-      background: #0056b3;
-    }
-
-    /* Footer */
-
-    footer {
-      background: #222;
-      color: #ddd;
       text-align: center;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .btn-buy:hover {
+      background: #004a99;
+    }
+    /* Section entreprise */
+    section.company-info {
+      background: white;
+      padding: 2rem 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      margin-bottom: 4rem;
+      line-height: 1.5;
+    }
+    section.company-info h2 {
+      text-align: center;
+      color: #004a99;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+    .company-info p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #444;
+    }
+    .company-info strong {
+      color: #007bff;
+    }
+    .license-img {
+      max-width: 300px;
+      display: block;
+      margin: 1rem auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    /* Contact */
+    section.contact {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    section.contact h2 {
+      font-size: 2rem;
+      color: #004a99;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    section.contact p {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+    section.contact a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      background: #25d366;
+      color: white;
+      font-weight: 700;
+      padding: 0.7rem 1.8rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    section.contact a:hover {
+      background: #1ebe5b;
+    }
+    /* Footer */
+    footer {
+      background: #004a99;
+      color: white;
       padding: 1.5rem 1rem;
+      text-align: center;
       font-size: 0.9rem;
     }
-
     /* Responsive */
-
-    @media(max-width: 600px) {
+    @media (max-width: 768px) {
+      .product-image {
+        height: 160px;
+      }
+    }
+    @media (max-width: 480px) {
       header {
         flex-direction: column;
         height: auto;
@@ -252,12 +256,13 @@
       nav a {
         margin-left: 0;
         margin-right: 1rem;
+        font-size: 1rem;
       }
       .hero h2 {
         font-size: 2rem;
       }
-      .product-image {
-        height: 150px;
+      main {
+        padding: 1rem;
       }
     }
   </style>
@@ -269,7 +274,7 @@
   <nav>
     <a href="#home">Accueil</a>
     <a href="#products">Produits</a>
-    <a href="#about">À propos</a>
+    <a href="#company">Entreprise</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -278,61 +283,87 @@
   <section class="hero" id="home">
     <h2>L’avenir du e-commerce commence ici</h2>
     <p>Bienvenue chez MATAJIR CORELINKS, la plateforme qui connecte les marchands du futur.</p>
-    <a href="#contact" class="btn-primary">Contactez-nous</a>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      Contactez-nous
+    </button>
   </section>
 
-  <section id="products">
-    <h2 class="section-title">Nos produits phares</h2>
+  <section class="products" id="products">
+    <h2>Nos produits phares</h2>
     <div class="products-grid">
 
-      <div class="product-card">
-        <img class="product-image" src="https://via.placeholder.com/400x300" alt="Produit 1" />
+      <article class="product-card">
+        <img class="product-image" src="https://sc04.alicdn.com/kf/H4a7e0b1f8f0641f1bd880b3e427db2f02.jpg" alt="Portable Air Cooler 1" />
         <div class="product-content">
-          <h3>Produit 1</h3>
-          <p>Description courte et attractive du produit 1.</p>
-          <div class="product-price">100 MAD</div>
-          <a href="mailto:contact@corelinksframer.com" class="btn-buy">Acheter</a>
+          <h3 class="product-title">Refroidisseur d'air portable - Modèle 1</h3>
+          <p class="product-desc">Refroidisseur d’air portable avec faible consommation d’énergie, idéal pour usage intérieur et extérieur avec fonction d’eau rafraîchissante.</p>
+          <div class="product-price">Prix usine : 250 MAD</div>
+          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 1'">Acheter</button>
         </div>
-      </div>
+      </article>
 
-      <div class="product-card">
-        <img class="product-image" src="https://via.placeholder.com/400x300" alt="Produit 2" />
+      <article class="product-card">
+        <img class="product-image" src="https://sc04.alicdn.com/kf/H4f84a7d6e6bb49dcba0e6d1088e70c3aF.jpg" alt="Portable Air Cooler 2" />
         <div class="product-content">
-          <h3>Produit 2</h3>
-          <p>Description courte et attractive du produit 2.</p>
-          <div class="product-price">200 MAD</div>
-          <a href="mailto:contact@corelinksframer.com" class="btn-buy">Acheter</a>
+          <h3 class="product-title">Refroidisseur d'air portable - Modèle 2</h3>
+          <p class="product-desc">Économique en énergie avec fonction de refroidissement par eau, parfait pour maison et utilisation en extérieur.</p>
+          <div class="product-price">Prix usine : 280 MAD</div>
+          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 2'">Acheter</button>
         </div>
-      </div>
+      </article>
 
-      <!-- Ajoute d'autres produits ici -->
+      <article class="product-card">
+        <img class="product-image" src="https://sc04.alicdn.com/kf/H8d6c2720c5934d88974e97e92738b733n.jpg" alt="Portable Air Cooler 3" />
+        <div class="product-content">
+          <h3 class="product-title">Refroidisseur d'air portable - Modèle 3</h3>
+          <p class="product-desc">Refroidisseur compact et puissant, idéal pour un usage personnel et mobile, faible consommation d'énergie.</p>
+          <div class="product-price">Prix usine : 230 MAD</div>
+          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 3'">Acheter</button>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <img class="product-image" src="https://sc04.alicdn.com/kf/Hf73534ea985e42c9b0ae5fbb1e8d66fdK.jpg" alt="Portable Air Cooler 4" />
+        <div class="product-content">
+          <h3 class="product-title">Refroidisseur d'air portable - Modèle 4</h3>
+          <p class="product-desc">Design moderne et fonction eau intégrée, faible consommation, adapté à la maison et aux espaces extérieurs.</p>
+          <div class="product-price">Prix usine : 270 MAD</div>
+          <button class="btn-buy" onclick="window.location.href='mailto:zane@bisheng168.com?subject=Commande Produit 4'">Acheter</button>
+        </div>
+      </article>
 
     </div>
   </section>
 
-  <section id="about">
-    <h2 class="section-title">À propos de nous</h2>
-    <p class="about-text">
-      MATAJIR CORELINKS est une entreprise innovante qui vise à révolutionner le e-commerce au Maroc et à l’international.  
-      Notre mission est de connecter les marchands du futur avec des solutions efficaces, fiables et modernes.  
-      Notre équipe est passionnée par la technologie et le commerce digital.
+  <section class="company-info" id="company">
+    <h2>Informations sur l’entreprise</h2>
+    <p><strong>Type de vérification :</strong> Fournisseur de service de vérification tiers</p>
+    <p><strong>Licence commerciale :</strong></p>
+    <ul>
+      <li><strong>Numéro d’enregistrement :</strong> 91330282MA293MM481</li>
+      <li><strong>Nom de l’entreprise :</strong> Cixi Bisheng Electrical Appliances Co., Ltd.</li>
+      <li><strong>Date de délivrance :</strong> 23 août 2017</li>
+      <li><strong>Date d’expiration :</strong> 22 août 2047</li>
+      <li><strong>Capital enregistré :</strong> RMB 1,000,000</li>
+      <li><strong>Pays/Territoire :</strong> Chine</li>
+      <li><strong>Adresse enregistrée :</strong> No. 1015, Guanfu Rd., Donghai Village, Fuhai Town Ningbo Zhejiang China</li>
+      <li><strong>Année de création :</strong> 2017</li>
+      <li><strong>Forme juridique :</strong> Société à responsabilité limitée (investie ou contrôlée par une personne physique)</li>
+      <li><strong>Représentant légal :</strong> Cen Liehui</li>
+    </ul>
+    <p style="text-align:center; margin-top: 1rem;">
+      <img src="https://example.com/license-image.jpg" alt="Licence commerciale" class="license-img" />
+      <!-- Remplace ce lien par la vraie image de ta licence -->
     </p>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Contactez-nous</h2>
-    <form action="mailto:contact@corelinksframer.com" method="post" enctype="text/plain">
-      <input type="text" name="Nom" placeholder="Votre nom" required />
-      <input type="email" name="Email" placeholder="Votre email" required />
-      <textarea name="Message" rows="5" placeholder="Votre message" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-    <p style="text-align:center; margin-top: 1rem;">
-      Ou contactez-nous directement :<br/>
-      Email : <a href="mailto:contact@corelinksframer.com">contact@corelinksframer.com</a><br/>
-      Téléphone : +212 6 12 34 56 78<br/>
-      <a href="https://wa.me/212612345678" target="_blank" style="color:#25d366; font-weight:bold;">WhatsApp</a>
-    </p>
+  <section class="contact" id="contact">
+    <h2>Contactez-nous</h2>
+    <p>Email : <a href="mailto:zane@bisheng168.com">zane@bisheng168.com</a></p>
+    <p>Téléphone : +86 183 5743 6614</p>
+    <a href="https://wa.me/8618357436614" target="_blank" rel="noopener" aria-label="Contact WhatsApp">
+      Contact WhatsApp
+    </a>
   </section>
 </main>
 
