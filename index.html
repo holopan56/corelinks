@@ -1,48 +1,344 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATAJIR CORELINKS</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 0.2em;
-        }
-        p {
-            font-size: 1.3em;
-            margin-bottom: 1.5em;
-        }
-        a.button {
-            background-color: #f1c40f;
-            color: #000;
-            padding: 0.8em 1.5em;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        a.button:hover {
-            background-color: #d4ac0d;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MATAJIR CORELINKS</title>
+  <style>
+    /* Reset basique */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9faff;
+      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #0056b3;
+      color: white;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      cursor: default;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffdd00;
+    }
+
+    main {
+      margin-top: 60px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0056b3, #007bff);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem 4rem;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: #ffdd00;
+      color: #0056b3;
+      border: none;
+      padding: 0.75rem 1.75rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: #e6c700;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #0056b3;
+      font-weight: 700;
+    }
+
+    /* Produits */
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #0056b3;
+    }
+
+    .product-content p {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .product-price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+
+    .btn-buy {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-buy:hover {
+      background: #0056b3;
+    }
+
+    /* Section À propos */
+
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #444;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* Contact */
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    button[type="submit"] {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #222;
+      color: #ddd;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+
+    @media(max-width: 600px) {
+      header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .product-image {
+        height: 150px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>MATAJIR CORELINKS</h1>
-    <p>L’avenir du e-commerce commence ici</p>
-    <a href="mailto:contact@corelinksframer.com" class="button">Contactez-nous</a>
+
+<header>
+  <h1>MATAJIR CORELINKS</h1>
+  <nav>
+    <a href="#home">Accueil</a>
+    <a href="#products">Produits</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <h2>L’avenir du e-commerce commence ici</h2>
+    <p>Bienvenue chez MATAJIR CORELINKS, la plateforme qui connecte les marchands du futur.</p>
+    <a href="#contact" class="btn-primary">Contactez-nous</a>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title">Nos produits phares</h2>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <img class="product-image" src="https://via.placeholder.com/400x300" alt="Produit 1" />
+        <div class="product-content">
+          <h3>Produit 1</h3>
+          <p>Description courte et attractive du produit 1.</p>
+          <div class="product-price">100 MAD</div>
+          <a href="mailto:contact@corelinksframer.com" class="btn-buy">Acheter</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-image" src="https://via.placeholder.com/400x300" alt="Produit 2" />
+        <div class="product-content">
+          <h3>Produit 2</h3>
+          <p>Description courte et attractive du produit 2.</p>
+          <div class="product-price">200 MAD</div>
+          <a href="mailto:contact@corelinksframer.com" class="btn-buy">Acheter</a>
+        </div>
+      </div>
+
+      <!-- Ajoute d'autres produits ici -->
+
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">À propos de nous</h2>
+    <p class="about-text">
+      MATAJIR CORELINKS est une entreprise innovante qui vise à révolutionner le e-commerce au Maroc et à l’international.  
+      Notre mission est de connecter les marchands du futur avec des solutions efficaces, fiables et modernes.  
+      Notre équipe est passionnée par la technologie et le commerce digital.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contactez-nous</h2>
+    <form action="mailto:contact@corelinksframer.com" method="post" enctype="text/plain">
+      <input type="text" name="Nom" placeholder="Votre nom" required />
+      <input type="email" name="Email" placeholder="Votre email" required />
+      <textarea name="Message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p style="text-align:center; margin-top: 1rem;">
+      Ou contactez-nous directement :<br/>
+      Email : <a href="mailto:contact@corelinksframer.com">contact@corelinksframer.com</a><br/>
+      Téléphone : +212 6 12 34 56 78<br/>
+      <a href="https://wa.me/212612345678" target="_blank" style="color:#25d366; font-weight:bold;">WhatsApp</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 MATAJIR CORELINKS - Tous droits réservés</p>
+</footer>
+
 </body>
 </html>
